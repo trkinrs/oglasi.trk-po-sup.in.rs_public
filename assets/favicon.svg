@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Kajak</title>
+  <desc id="desc">Stilizovani kajak sa veslom</desc>
+  <rect width="64" height="64" rx="16" fill="#12242c"/>
+  <path d="M10 38c9-3 16-4 22-4s13 1 22 4c-7 8-15 12-22 12S17 46 10 38Z" fill="#ef684d"/>
+  <path d="M15 39c6 2 12 3 17 3s11-1 17-3" fill="none" stroke="#fffdf8" stroke-linecap="round" stroke-width="2"/>
+  <path d="M21 16 49 49" fill="none" stroke="#f4f1e9" stroke-linecap="round" stroke-width="3"/>
+  <path d="m17 14 8 4-4 7-8-4Z" fill="#f4f1e9"/>
+  <path d="m43 43 8 4-4 7-8-4Z" fill="#f4f1e9"/>
+</svg>
