@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/assets/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 <body><div class="site-shell">
-  <header class="topbar"><a class="brand" href="/" aria-label="Veslački ljudi početna"><span class="brand-mark">⌁</span><span>Veslački ljudi</span></a><a class="back-link" href="/">← Nazad na oglase</a></header>
+  <header class="topbar"><a class="brand" href="/" aria-label="Veslački ljudi početna"><span class="brand-mark">⌁</span><span>Veslački ljudi</span></a><a class="back-link" id="back-to-listings" href="/">← Nazad na oglase</a></header>
   <main class="post-page"><div class="post-kicker"><span class="eyebrow eyebrow-dark"> ·  ·  · </span><time class="post-time js-relative-date" datetime="2026-02-20T10:50:56+00:00">20.02.2026.</time></div>
     <div class="post-layout"><article class="post-copy"><h1>Welcome to Jekyll!</h1><div class="post-price"> </div><p class="post-lede"></p><div class="post-facts"><div><span>Brend</span><strong></strong></div><div><span>Stanje</span><strong></strong></div><div><span>Godina proizvodnje</span><strong></strong></div><div><span>Lokacija</span><strong>⌖ </strong></div><div><span>Objavio/la</span><strong></strong></div></div><div class="post-contact"><div><span class="seller-avatar"></span><div><small>Kontakt podaci</small><div class="post-contact-links"></div></div></div></div></article>
       <section class="post-gallery" aria-label="Galerija fotografija"><div class="gallery-grid"></div><p class="gallery-hint">Klikni za uvećanje · prevuci za sledeću fotografiju</p></section></div>
@@ -42,5 +42,11 @@
   const startOfDay=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
   const days=Math.floor((startOfDay(now)-startOfDay(date))/86400000);
   dateElement.textContent=days<=0?'danas':days===1?'juče':`pre ${days} dana`;
+</script>
+<script>
+  // Return to the listings with the filters and scroll position the visitor left.
+  const backLink=document.querySelector('#back-to-listings');const homeUrl=sessionStorage.getItem('listings:home-url');
+  if(backLink&&homeUrl)backLink.href=homeUrl;
+  backLink?.addEventListener('click',()=>sessionStorage.setItem('listings:restore-scroll','1'));
 </script>
 </body></html>
