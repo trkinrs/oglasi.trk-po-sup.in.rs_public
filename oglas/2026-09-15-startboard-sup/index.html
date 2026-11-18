@@ -2,7 +2,8 @@
 <html lang="sr">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <title>Starboard — Veslački ljudi</title><meta name="description" content="">
+  <title>Starboard — Veslački ljudi</title><meta name="description" content=""><meta property="og:title" content="Starboard"><meta property="og:description" content="190 EUR · Futog · Allstar Touring kajak u odličnom stanju, spreman za duže ture i vikend avanture. Stabilan na mirnoj vodi, dovoljno brz za ozbiljnije izlete..."><meta property="og:image" content="https://oglasi.trk-po-sup.in.rs/assets/hero-paddling.png"><meta property="og:url" content="https://oglasi.trk-po-sup.in.rs/oglas/2026-09-15-startboard-sup/"><meta property="og:type" content="article"><meta property="og:site_name" content="Veslački ljudi"><meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -10,7 +11,7 @@
 <body><div class="site-shell">
   <header class="topbar"><a class="brand" href="/" aria-label="Veslački ljudi početna"><span class="brand-mark">⌁</span><span>Veslački ljudi</span></a><a class="back-link" id="back-to-listings" href="/">← Nazad na oglase</a></header>
   <main class="post-page"><div class="post-kicker"><span class="eyebrow eyebrow-dark">Prodajem · SUP · Takmicarski · Futog</span><time class="post-time js-relative-date" datetime="2026-09-15T00:00:00+00:00">15.09.2026.</time></div>
-    <div class="post-layout"><article class="post-copy"><h1>Starboard</h1><div class="post-price">€ 190</div><p class="post-lede"></p><div class="post-facts"><div><span>Brend</span><strong>Starboard</strong></div><div><span>Stanje</span><strong>Kao novo</strong></div><div><span>Godina proizvodnje</span><strong>2022</strong></div><div><span>Lokacija</span><strong>⌖ Futog</strong></div><div><span>Objavio/la</span><strong>Dusan</strong></div></div><div class="post-contact"><div><span class="seller-avatar">DU</span><div><small>Kontakt podaci</small><div class="post-contact-links"><a href="tel:381641234567">Telefon</a></div></div></div></div></article>
+    <div class="post-layout"><article class="post-copy"><h1>Starboard</h1><div class="post-price">€ 190</div><p class="post-lede"></p><div class="post-facts"><div><span>Brend</span><strong>Starboard</strong></div><div><span>Stanje</span><strong>Kao novo</strong></div><div><span>Godina proizvodnje</span><strong>2022</strong></div><div><span>Lokacija</span><strong>⌖ Futog</strong></div><div><span>Objavio/la</span><strong>Dusan</strong></div></div><div class="post-contact"><div><span class="seller-avatar">DU</span><div><small>Kontakt podaci</small><div class="post-contact-links"><a href="tel:381641234567">Telefon</a></div></div></div></div><p class="share"><button class="pill" id="share-listing" type="button">Podeli</button> <span class="share-copied" id="share-copied" hidden>Link kopiran</span></p></article>
       <section class="post-gallery" aria-label="Galerija fotografija"><div class="gallery-grid"></div><p class="gallery-hint">Klikni za uvećanje · prevuci za sledeću fotografiju</p></section></div>
     <section class="post-description"><p class="eyebrow eyebrow-dark">O opremi</p><div><p>Allstar</p>
 
@@ -37,5 +38,9 @@
   const backLink=document.querySelector('#back-to-listings');const homeUrl=sessionStorage.getItem('listings:home-url');
   if(backLink&&homeUrl)backLink.href=homeUrl;
   backLink?.addEventListener('click',()=>sessionStorage.setItem('listings:restore-scroll','1'));
+  // "Podeli": the browser's share menu, or copying the link where there is none.
+  const copied=document.querySelector('#share-copied');let copiedTimer;
+  document.querySelector('#share-listing')?.addEventListener('click',()=>{const data={title:document.querySelector('h1').textContent.trim(),url:location.href};if(navigator.share){navigator.share(data).catch(()=>{});return}navigator.clipboard.writeText(location.href).then(()=>{copied.hidden=false;clearTimeout(copiedTimer);copiedTimer=setTimeout(()=>{copied.hidden=true},2000)})});
 </script>
+<script src="/assets/visits.js"></script>
 </body></html>
